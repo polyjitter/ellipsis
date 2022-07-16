@@ -1,0 +1,28 @@
+using Gtk 4.0;
+using Adw 1;
+
+template FilesPage : Stack {
+  visibile-child: none_changes;
+  transition-type: crossfade;
+
+  Adw.StatusPage none_files {
+    icon-name: "folder-symbolic";
+    title: _("No Tracked Files");
+    description: _("Add a file or folder to get started.");
+
+    child: Adw.Clamp {
+      maximum-size: 220;
+
+      child: Box {
+        orientation: vertical;
+        spacing: 12;
+
+        .AddFilesButton none_add_files_button {
+          styles ["pill", "suggested-action"]
+        }
+
+        .AddFoldersButton none_add_folders_button {}
+      };
+    };  // none_refresh_button
+  }  // RefreshButton Clamp
+}  // none_changes

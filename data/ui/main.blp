@@ -1,0 +1,59 @@
+using Gtk 4.0;
+using Adw 1;
+
+template MainBox : Box {
+  // Properties
+  orientation: vertical;
+  hexpand: true;
+  vexpand: true;
+
+  // Child 1
+  Adw.HeaderBar main_header {
+    // Properties
+    centering-policy: strict;
+
+    // Title Widget
+    [title]
+    Adw.ViewSwitcherTitle main_title {
+      // Properties
+      stack: main_stack;
+      title: "Ellipsis"
+
+    }  // main_title
+
+  }  // main_header
+
+  // Child 2
+  Adw.ViewStack main_stack {
+    // Properties
+    vexpand: true;
+
+    // Child 1
+    Adw.ViewStackPage {
+      name: "changes";
+      title: _("Changes");
+      icon-name: "mail-send-receive-symbolic";
+
+      child: .ChangesPage changes_page {};
+    }  // ViewStackPage
+
+    // Child 2
+    Adw.ViewStackPage {
+      name: "files";
+      title: _("Files");
+      icon-name: "folder-symbolic";
+
+      child: .FilesPage files_page {};
+    }  // ViewStackPage
+
+  }  // main_stack
+
+  // Child 3
+  Adw.ViewSwitcherBar main_bottom_switcher {
+    // Properties
+    stack: main_stack;
+    reveal: bind main_title.title-visible;
+
+  }  // main_bottom_switcher
+
+}  // main_box

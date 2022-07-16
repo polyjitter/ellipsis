@@ -1,0 +1,36 @@
+using Gtk 4.0;
+using Adw 1;
+
+template ChangesPage : Stack {
+  visibile-child: none_changes;
+  transition-type: crossfade;
+
+  Adw.StatusPage none_changes {
+    icon-name: "mail-send-receive-symbolic";
+    title: _("No New Changes");
+    description: _("Your dotfiles all up to date.");
+
+    child: Adw.Clamp {
+      maximum-size: 220;
+
+      child: .RefreshButton none_refresh_button {
+        styles ["pill", "suggested-action"]
+      };  // none_refresh_button
+    };  // RefreshButton Clamp
+  }  // none_changes
+
+  ScrolledWindow some_changes {
+    Box some_box {
+      orientation: vertical;
+      spacing: 12;
+
+      Box some_buttons {
+        orientation: horizontal;
+        spacing: 12;
+
+        .RefreshButton some_refresh_button {}
+        .ApplyButton some_apply_button {}
+      }  // some_buttons
+    }  // some_box
+  }  // some_changes
+}  // ChangesPage 

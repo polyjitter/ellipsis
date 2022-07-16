@@ -1,0 +1,13 @@
+name: ellipsis
+version: 0.1.0
+
+authors:
+  - Adriene Kae <polyjitter@fastmail.com>
+
+targets:
+  ellipsis:
+    main: src/ellipsis.cr
+
+crystal: 1.0.0
+
+license: GPL-3.0

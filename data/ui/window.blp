@@ -1,0 +1,18 @@
+using Gtk 4.0;
+using Adw 1;
+
+template MainWindow : Adw.ApplicationWindow {
+  // Properties
+  default-width: 400;
+  default-height: 500;
+
+  Stack window_stack {
+    visibile-child: main_box;
+    transition-type: crossfade;
+    
+    .MainBox main_box {}
+
+    .WelcomeBox welcome_box {}
+  }  // window_stack
+
+}  // MainWindow

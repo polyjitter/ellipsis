@@ -1,0 +1,87 @@
+using Gtk 4.0;
+using Adw 1;
+
+template WelcomeBox : Box {
+  orientation: vertical;
+
+  // Child 1
+  Adw.HeaderBar welcome_header {
+    styles ["flat"]
+
+    [title]
+    Adw.WindowTitle welcome_title {
+      title: _("Ellipsis");
+
+    }  // welcome_title
+
+  }  // welcome_header
+  
+  // Child 2
+  Adw.Clamp welcome_content {
+    maximum-size: 440;
+    tightening-threshold: 340;
+    margin-top: 0;
+    margin-bottom: 24;
+    margin-start: 24;
+    margin-end: 24;
+    vexpand: true;
+
+    // Child 1
+    Adw.Clamp welcome_top {
+      maximum-size: 360;
+          
+      child: Box {
+        orientation: vertical;
+        valign: center;
+        spacing: 24;
+
+        // Child 1
+        Picture welcome_picture {
+          height-request: 120;
+        }  // welcome_picture
+
+        // Child 2
+        Label welcome_heading {
+          wrap: true;
+          wrap-mode: word_char;
+          justify: center;
+          label: _("Welcome to Ellipsis");
+        }  // welcome_title
+
+      };  // welcome_header Box
+
+    }  // welcome_header
+
+    // Child 2
+    Adw.Clamp welcome_bottom {
+      maximum-size: 260;
+      margin-top: 10;
+
+      child: Box {
+        orientation: vertical;
+        valign: center;
+        spacing: 16;
+        
+        // Child 1
+        Button initialize_button {
+          label: _("Initialize Tracking");
+          action-name: "app.init-chezmoi";
+
+          styles ["pill", "suggested-action"]
+        }  // initialize_button
+
+        // Child 2
+        Button manual_button {
+          label: _("Find Manually...");
+          action-name: "app.find-chezmoi";
+
+          styles ["pill"]
+        }  // manual_button
+
+      };  //welcome_buttons box
+
+    }  // welcome_buttons
+
+  }  // welcome_content
+
+}  // WelcomeBox

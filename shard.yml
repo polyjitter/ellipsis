@@ -10,4 +10,17 @@ targets:
 
 crystal: 1.0.0
 
+dependencies:
+  libadwaita:
+    github: GeopJr/libadwaita.cr
+  gettext:
+    github: GeopJr/gettext.cr
+    version: ~> 1.0.0
+  compiled_license:
+    github: elorest/compiled_license
+    version: ~> 1.2.2
+  non-blocking-spawn:
+    github: GeopJr/non-blocking-spawn
+    version: ~> 1.0.2
+
 license: GPL-3.0

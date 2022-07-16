@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/github/polyjitter/Ellipsis">
+    <!-- <file compressed="true" alias="style.css">css/style.css</file> -->
+    <!-- <file compressed="true" preprocess="xml-stripblanks">icons/com.github.polyjitter.Ellipsis.svg</file> -->
+    <file compressed="true" preprocess="xml-stripblanks">ui/compiled/window.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/compiled/main.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/compiled/welcome.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/compiled/files.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/compiled/changes.ui</file>
+  </gresource>
+</gresources>

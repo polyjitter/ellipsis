@@ -2,9 +2,6 @@ require "libadwaita"
 require "gettext"
 require "log"
 
-require "./views/*"
-require "./functions/*"
-
 module Ellipsis
   extend self
 
